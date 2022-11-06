@@ -1,0 +1,66 @@
+body{
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+h1{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+form{
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+}
+
+p{
+    margin: 20px 0;
+}
+
+p.webtoon_url{
+    font-weight: bold;
+    color: cornflowerblue;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px auto;
+}
+
+p.top_score{
+    margin: 20px 0 0 0;
+    font-weight: bold;
+    font-size: 17px;
+    color: red;
+}
+
+p.non_score{
+    margin: 0;
+    color: slategrey;
+}
+
+hr{
+    margin: 0;
+}
+
+ol{
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+li{
+    margin: 10px auto;
+    text-decoration: underline;
+    cursor: pointer;
+    width: 300px;
+}
+
+button{
+    margin: 25px 10px;
+}
+
+img{
+    width: 400px;
+}
