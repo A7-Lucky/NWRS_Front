@@ -1,76 +1,76 @@
-body{
-    height: 100vh;
-    display: grid;
-    background-color: whitesmoke;
+body {
+  height: 100vh;
+  display: grid;
+  background-color: whitesmoke;
 }
 
-h1{
-    font-size: 50px;
-    font-weight: bold;
-    margin: 25px 0;
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 25px 0;
 }
 
-h2{
-    font-size: 30px;
-    margin: 25px 0;
+h2 {
+  font-size: 30px;
+  margin: 25px 0;
 }
 
-form{
-    margin: 60px auto;
-    width: 1200px;
-    text-align: center;
+form {
+  margin: 60px auto;
+  width: 1200px;
+  text-align: center;
 }
 
-hr{
-    margin: 20px;
-    border: 0;
-    height: 2px;
-    background-color: black;
+hr {
+  margin: 20px;
+  border: 0;
+  height: 2px;
+  background-color: black;
 }
 
-p{
-    list-style: none;
-    margin: 25px 0;
-    padding: 0px;
+p {
+  list-style: none;
+  margin: 25px 0;
+  padding: 0px;
 }
 
-img{
-    margin: 20px;
-    cursor: pointer;
-    width: 200px;
+img {
+  margin: 20px;
+  cursor: pointer;
+  width: 200px;
 }
 
-span{
-    font-size: large;
-    margin: 0;
-    cursor: pointer;
-    width: 300px;
-    text-decoration: underline;
-    display: inline-block;
+span {
+  font-size: large;
+  margin: 0;
+  cursor: pointer;
+  width: 300px;
+  text-decoration: underline;
+  display: inline-block;
 }
 
-nav.navbar{
-    width: 100%;
-    justify-content: space-between;
-    position: fixed;
+nav.navbar {
+  width: 100%;
+  justify-content: space-between;
+  position: fixed;
 }
 
-a.navbar-brand{
-    margin: 0 20px;
+a.navbar-brand {
+  margin: 0 20px;
 }
 
-div.space{
-    display: flex;
+div.space {
+  display: flex;
 }
 
-input.form-control{
-    width: 500px;
+input.form-control {
+  width: 500px;
 }
 
 .material-symbols-outlined {
-    font-size: 30px;
+  font-size: 30px;
 }
 
-button{
-    margin: 0 10px;
+button {
+  margin: 0 10px;
 }
