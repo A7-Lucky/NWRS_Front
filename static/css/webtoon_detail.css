@@ -1,18 +1,17 @@
 body{
     height: 100vh;
     display: grid;
-    align-items: center;
     background-color: whitesmoke;
 }
 
 h1{
-    font-size: 25px;
+    font-size: 40px;
     font-weight: bold;
     margin: 25px 0;
 }
 
 form{
-    margin: 0 auto;
+    margin: 60px auto;
     width: 600px;
     text-align: center;
 }
@@ -73,10 +72,13 @@ p.non_score{
 
 hr{
     margin: 0;
+    border: 0;
+    height: 1px;
+    background-color: black;
 }
 
 ol{
-    margin: 0 0 20px 0;
+    margin: 0 0 30px 0;
     padding: 0;
 }
 
@@ -87,10 +89,28 @@ li{
     width: 400px;
 }
 
+nav.navbar{
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+}
+
+a.navbar-brand{
+    margin: 0 20px;
+}
+
+div.space{
+    display: flex;
+}
+
+input.form-control{
+    width: 500px;
+}
+
 button{
-    margin: 25px 10px;
+    margin: 0 10px;
 }
 
 img{
-    width: 400px;
+    width: 350px;
 }
