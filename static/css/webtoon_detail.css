@@ -43,6 +43,9 @@ p.non_score{
 
 hr{
     margin: 0;
+    border: 0;
+    height: 1px;
+    background-color: black;
 }
 
 ol{

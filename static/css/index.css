@@ -1,7 +1,6 @@
 body{
     height: 100vh;
     display: grid;
-    align-items: center;
     background-color: whitesmoke;
 }
 
@@ -17,13 +16,16 @@ h2{
 }
 
 form{
-    margin: 0 auto;
+    margin: 50px auto;
     width: 1200px;
     text-align: center;
 }
 
 hr{
-    margin: 0;
+    margin: 20px;
+    border: 0;
+    height: 2px;
+    background-color: black;
 }
 
 p{
@@ -38,15 +40,29 @@ img{
     width: 200px;
 }
 
-div{
+/* p.div{
     font-size: large;
     margin: 0;
     cursor: pointer;
     width: 360px;
     text-decoration: underline;
     display: inline-block;
+} */
+
+nav.navbar{
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+}
+
+a.navbar-brand{
+    margin: 0 20px;
+}
+
+div.space{
+    display: flex;
 }
 
 button{
-    margin: 25px 10px;
+    margin: 0 10px;
 }

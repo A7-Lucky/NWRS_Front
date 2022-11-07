@@ -18,11 +18,6 @@ function webtoonDetail(webtoon_id){
     location.href = url
 }
 
-// 새로고침 //
-function pageRefresh(){
-    window.location.replace(`${frontend_base_url}/index.html`)
-}
-
 // 로그아웃 //
 function handleLogout(){
     localStorage.removeItem("access")
