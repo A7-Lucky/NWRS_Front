@@ -52,3 +52,26 @@ async function loadRecommend(){
     })
 }
 loadRecommend()
+
+// 웹툰 리뷰 리스트 보여주기 //
+async function loadWebtoonReview(webtoon_id){
+    reviews = await getWebtoonReview(webtoon_id)
+    const review_list = document.getElementById("reviews")
+
+    reviews.forEach(review => {
+        const newReview = document.createElement("li");
+        newReview.setAttribute("id", review.id)
+        newReview.innerText = "작성자 : " + review.user + " / 댓글 : " + review.comment + " / 평점 : " + review.my_score
+        review_list.appendChild(newReview)
+    })
+}
+
+loadWebtoonReview(webtoon_id)
+
+// 웹툰 리뷰 작성하기 //
+function handleWebtoonReviewCreate(){
+    const comment = document.getElementById("comment").value
+    const my_score = document.getElementById("my_score").value
+    
+    CreateWebtoonReview(comment, my_score)
+}

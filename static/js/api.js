@@ -115,6 +115,47 @@ async function getRecommend() {
     return response_json
 }
 
+
+// 웹툰 리뷰 리스트 가져오기 //
+async function getWebtoonReview(webtoon_id) {
+    const response = await fetch(`${backend_base_url}/webtoon/${webtoon_id}/review`, {
+        method: 'GET',
+    })
+    response_json = await response.json()
+    return response_json
+}
+
+// 웹툰 리뷰 작성하기 //
+async function CreateWebtoonReview(comment, my_score){
+    const response = await fetch(`${backend_base_url}/webtoon/${webtoon_id}/review/`,{
+        headers:{
+            'content-type':'application/json',
+            "Authorization":"Bearer " + localStorage.getItem("access"),
+        },
+        method: 'POST',
+        body: JSON.stringify({
+            webtoon : webtoon_id,
+            comment : comment,
+            my_score : my_score,
+        })
+    })
+
+    response_json = await response.json()
+    console.log(response_json)
+
+    if (response.status == 200){
+        window.location.replace(`${frontend_base_url}/webtoon_detail.html?id=${webtoon_id}`);
+    } else {
+        alert(response.status)
+    }
+}
+
+// 웹툰 디테일 페이지 연결 //
+function webtoonDetail(webtoon_id){
+    const url = `${frontend_base_url}/webtoon_detail.html?id=${webtoon_id}`
+    location.href = url
+}
+
 // webtoon_search.html --------------------------------------------------------------------------->
 // 검색한 웹툰 //
 async function getWebtoonsSearch() {
@@ -126,6 +167,18 @@ async function getWebtoonsSearch() {
     response_json = await response.json()
     return response_json
 }
+
+// myreview.html --------------------------------------------------------------------------->
+// 나의 리뷰 리스트 보여주기 //
+async function getMyReview() {
+    const response = await fetch(`${backend_base_url}/webtoon/myreview`, {
+        headers: {
+            "Authorization":"Bearer " + localStorage.getItem("access")
+        },
+        method: 'GET',
+    })
+    response_json = await response.json()
+    return response_json
 
 // 웹툰 검색 페이지 연결 //
 function webtoonSearch(){

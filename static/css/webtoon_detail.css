@@ -20,6 +20,36 @@ p{
     margin: 20px 0;
 }
 
+.wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.reviews_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    margin-left: 100px;
+    width: 400px;
+}
+
+.review_create_box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.review_create_small_box {
+    margin: 3px;
+}
+
 p.webtoon_url{
     font-weight: bold;
     color: cornflowerblue;
@@ -56,7 +86,7 @@ li{
     margin: 10px auto;
     text-decoration: underline;
     cursor: pointer;
-    width: 300px;
+    width: 400px;
 }
 
 nav.navbar{

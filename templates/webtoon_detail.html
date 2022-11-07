@@ -102,8 +102,35 @@
         <button type="button" class="btn btn-primary" onclick="handleLogout()">
           로그아웃
         </button>
+            </div>
+            </nav>
+
+
+
+  <div class="wrap">
+    <div class="reviews_box">
+      <div class="reviews_inner_box">
+          <div class="review_title">
+              <h3>Review</h3>
+          </div>
+          <ol id="reviews">
+          </ol>
       </div>
-    </nav>
+      <div class="review_create_box">
+          <div class="review_create_small_box">
+              <input name="comment" id="comment" class="review_create_inner_box" placeholder="댓글">
+          </div>
+          <div class="review_create_small_box">
+              <input type="text" name="my_score" id="my_score"  class="review_create_inner_box" placeholder="평점">
+          </div>
+          <div class="comment_box">
+              <button type="button" onclick="handleWebtoonReviewCreate()">댓글 등록</button>
+          </div>
+      </div>
+    </div>
+  </div>
+      </div>
+    
     <form action="">
       <h1 id="title"></h1>
       <hr />
@@ -122,6 +149,7 @@
       <ol id="recommends"></ol>
       <hr />
     </form>
+
 
     <script>
       // 인증된 유저만 페이지 접근 가능 //
