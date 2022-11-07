@@ -10,7 +10,20 @@
 </head>
 <body>
     <h1>My Review List</h1>
-    <ol id="myreviews"></ol>
+    <div id="update_box" class="update_box"></div>
+    <div id="reviewlist_box" class="reviewlist_box">
+        <div>
+            <ol id="webtoon" class="webtoon"></ol>
+        </div>
+        <div>
+            <ol id="comment" class="comment"></ol>
+        </div>
+        <div>
+            <ol id="score" class="score"></ol>
+        </div>
+        <div id="update_button" class="update_button"></div>
+        <div id="delete_button" class="delete_button"></div>
+    </div>
 
     <script src="../static/js/api.js"></script>
     <script src="../static/js/myreview.js"></script>
@@ -22,5 +35,10 @@
     window.location.replace(`http://127.0.0.1:5500/templates/login.html`);
     }
     </script>
+    <!-- <script type="text/javascript">
+        function reply_click(clicked_id){
+            alert(clicked_id)
+        }
+    </script> -->
 </body>
 </html>

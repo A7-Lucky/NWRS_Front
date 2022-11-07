@@ -23,5 +23,29 @@ li{
     margin: 10px auto;
     text-decoration: underline;
     cursor: pointer;
-    width: 400px;
+    width: 300px;
+}
+
+button{
+    width: 50px;
+    margin: 0px 7px 7px 0px;
+}
+
+textarea {
+    width: 500px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.reviewlist_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+.comment, .score {
+    list-style: none;
+    padding: 0px;
 }

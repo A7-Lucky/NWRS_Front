@@ -150,6 +150,50 @@ async function CreateWebtoonReview(comment, my_score){
     }
 }
 
+// 웹툰 리뷰 수정하기 //
+async function handleUpdateWebtoonreview(review_id){
+    const input_comment = document.getElementById("input_comment").value
+    const input_score = document.getElementById("input_score").value
+
+    const response = await fetch(`${backend_base_url}/webtoon/${webtoon_id}/review/${review_id}/`,{
+        headers:{
+            'content-type':'application/json',
+            "Authorization":"Bearer " + localStorage.getItem("access"),
+        },
+        method: 'PUT',
+        body: JSON.stringify({
+            webtoon : webtoon_id,
+            comment : input_comment,
+            my_score : input_score,
+        })
+    })
+
+    response_json = await response.json()
+    console.log(response_json)
+
+    if (response.status == 200){
+        window.location.replace(`${frontend_base_url}/webtoon_detail.html?id=${webtoon_id}`);
+    } else {
+        alert(response.status)
+    }
+}
+
+// 웹툰 리뷰 삭제하기 //
+async function handleDeleteWebtoonreview(review_id){
+    const response = await fetch(`${backend_base_url}/webtoon/${webtoon_id}/review/${review_id}/`, {
+        headers:{
+            'content-type':'application/json',
+            "Authorization":"Bearer " + localStorage.getItem("access"),
+        },
+        method: 'DELETE',})
+    
+        if(response.status == 204){
+            window.location.replace(`${frontend_base_url}/webtoon_detail.html?id=${webtoon_id}`);
+        } else {
+            alert(response.status)
+        }
+}
+
 // 웹툰 디테일 페이지 연결 //
 function webtoonDetail(webtoon_id){
     const url = `${frontend_base_url}/webtoon_detail.html?id=${webtoon_id}`
@@ -179,6 +223,72 @@ async function getMyReview() {
     })
     response_json = await response.json()
     return response_json
+}
+
+// 나의 리뷰 수정하기 //
+async function handleUpdateMyreview(review_id){
+    const input_comment = document.getElementById("input_comment").value
+    const input_score = document.getElementById("input_score").value
+    const webtoon = document.getElementById("webtoon").value
+    console.log(webtoon)
+
+    const response = await fetch(`${backend_base_url}/webtoon/myreview/${review_id}/`,{
+        headers:{
+            'content-type':'application/json',
+            "Authorization":"Bearer " + localStorage.getItem("access"),
+        },
+        method: 'PUT',
+        body: JSON.stringify({
+            webtoon : webtoon_id,
+            comment : input_comment,
+            my_score : input_score,
+        })
+    })
+
+    response_json = await response.json()
+    console.log(response_json)
+
+    if (response.status == 200){
+        window.location.replace(`${frontend_base_url}/myreview.html`);
+    } else {
+        alert(response.status)
+    }
+}
+
+// 나의 리뷰 삭제하기 //
+async function handleDeleteMyreview(myreview_id){
+    const response = await fetch(`${backend_base_url}/webtoon/myreview/${myreview_id}`, {
+        headers:{
+            'content-type':'application/json',
+            "Authorization":"Bearer " + localStorage.getItem("access"),
+        },
+        method: 'DELETE',})
+    
+        if(response.status == 204){
+            window.location.replace(`${frontend_base_url}/myreview.html`);
+        } else {
+            alert(response.status)
+        }
+}
+
+// 유저 정보 가져오기 --------------------------------------------------------------------------->
+// 로그인한 유저 이름 가져오기 //
+async function getName(user_id) {
+    const response = await fetch(`${backend_base_url}/users/mypage/${user_id}`,{
+        headers: {
+            "Authorization":"Bearer " + localStorage.getItem("access")
+        },
+        method: 'GET',
+    })
+
+    if (response.status == 200){
+        response_json = await response.json()
+        console.log(response_json)
+        return response_json.username
+    }
+    else{
+        return null
+    }
 
 // 웹툰 검색 페이지 연결 //
 function webtoonSearch(){
