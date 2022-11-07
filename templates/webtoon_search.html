@@ -44,9 +44,9 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>NWRS | 상세 페이지</title>
+    <title>NWRS | 검색 페이지</title>
 
-    <link rel="stylesheet" href="../static/css/webtoon_detail.css" />
+    <link rel="stylesheet" href="../static/css/webtoon_search.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -105,21 +105,8 @@
       </div>
     </nav>
     <form action="">
-      <h1 id="title"></h1>
       <hr />
       <p id="thumbnail_url"></p>
-      <p id="day"></p>
-      <p id="genre"></p>
-      <p id="story"></p>
-      <hr />
-      <p class="webtoon_url" id="webtoon_url">< 웹툰 보러 가기 ></p>
-      <hr />
-      <p class="top_score">
-        이 작품을 재미있게 감상한 유저들에게 높은 평점을 받은 웹툰 Top 5
-      </p>
-      <p class="non_score">(평점 집계 중인 작품은 나열되지 않음)</p>
-      <br />
-      <ol id="recommends"></ol>
       <hr />
     </form>
 
@@ -132,6 +119,6 @@
     </script>
 
     <script src="../static/js/api.js"></script>
-    <script src="../static/js/webtoon_detail.js"></script>
+    <script src="../static/js/webtoon_search.js"></script>
   </body>
 </html>
