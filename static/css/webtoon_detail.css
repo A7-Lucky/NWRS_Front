@@ -1,18 +1,17 @@
 body{
     height: 100vh;
     display: grid;
-    align-items: center;
     background-color: whitesmoke;
 }
 
 h1{
-    font-size: 25px;
+    font-size: 40px;
     font-weight: bold;
     margin: 25px 0;
 }
 
 form{
-    margin: 0 auto;
+    margin: 60px auto;
     width: 600px;
     text-align: center;
 }
@@ -60,10 +59,28 @@ li{
     width: 300px;
 }
 
+nav.navbar{
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+}
+
+a.navbar-brand{
+    margin: 0 20px;
+}
+
+div.space{
+    display: flex;
+}
+
+input.form-control{
+    width: 500px;
+}
+
 button{
-    margin: 25px 10px;
+    margin: 0 10px;
 }
 
 img{
-    width: 400px;
+    width: 350px;
 }

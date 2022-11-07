@@ -49,6 +49,52 @@
     <link rel="stylesheet" href="../static/css/webtoon_detail.css" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="space">
+        <a class="navbar-brand" href="../templates/index.html">NWRS</a>
+        <ul class="navbar-nav mr-auto">
+          <div class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Category
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">액션</a>
+              <a class="dropdown-item" href="#">드라마</a>
+              <a class="dropdown-item" href="#">무협/사극</a>
+              <a class="dropdown-item" href="#">스포츠</a>
+              <a class="dropdown-item" href="#">스릴러</a>
+              <a class="dropdown-item" href="#">판타지</a>
+              <a class="dropdown-item" href="#">로맨스</a>
+              <a class="dropdown-item" href="#">일상</a>
+              <a class="dropdown-item" href="#">감성</a>
+              <a class="dropdown-item" href="#">개그</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+      <div class="space">
+        <input class="form-control" type="search" aria-label="Search" />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </div>
+      <div class="space">
+        <button type="button" class="btn btn-primary" onclick="#">
+          프로필
+        </button>
+        <button type="button" class="btn btn-primary" onclick="indexLogout()">
+          로그아웃
+        </button>
+      </div>
+    </nav>
     <form action="">
       <h1 id="title"></h1>
       <hr />
@@ -66,12 +112,6 @@
       <br />
       <ol id="recommends"></ol>
       <hr />
-      <button type="button" class="btn btn-primary" onclick="moveHome()">
-        홈으로
-      </button>
-      <button type="button" class="btn btn-primary" onclick="handleLogout()">
-        로그아웃
-      </button>
     </form>
 
     <script src="../static/js/api.js"></script>

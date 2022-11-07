@@ -16,7 +16,7 @@ h2{
 }
 
 form{
-    margin: 50px auto;
+    margin: 60px auto;
     width: 1200px;
     text-align: center;
 }
@@ -61,6 +61,10 @@ a.navbar-brand{
 
 div.space{
     display: flex;
+}
+
+input.form-control{
+    width: 500px;
 }
 
 button{

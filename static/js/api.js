@@ -19,7 +19,7 @@ function webtoonDetail(webtoon_id){
 }
 
 // 로그아웃 //
-function handleLogout(){
+function indexLogout(){
     localStorage.removeItem("access")
     localStorage.removeItem("refresh")
     localStorage.removeItem("payload")
@@ -120,13 +120,8 @@ function webtoonDetail(webtoon_id){
     location.href = url
 }
 
-// 홈으로 이동 //
-function moveHome(){
-    window.location.replace(`${frontend_base_url}/index.html`)
-}
-
 // 로그아웃 //
-function handleLogout(){
+function detailLogout(){
     localStorage.removeItem("access")
     localStorage.removeItem("refresh")
     localStorage.removeItem("payload")
