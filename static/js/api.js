@@ -32,24 +32,3 @@ async function handleSignup() {
         window.location.replace(`${frontend_base_url}login.html`)
     }
 }
-
-async function handleLogin() {
-    const username = document.getElementById('username').value
-    const password = document.getElementById('password').value
-    
-    const response = await fetch('http://127.0.0.1:8000/users/api/token/', {
-        headers: {
-            'content-type': 'application/json',
-        },
-        method: 'POST',
-        body: JSON.stringify({
-            'username': username,
-            'password': password
-        })
-    })
-    const response_json = await response.json()
-    console.log(response_json)
-
-    localStorage.setItem('access', response_json.access);
-    localStorage.setItem('refresh', response_json.refresh);
-}
