@@ -11,7 +11,7 @@ h1 {
 }
 
 form {
-  margin: 60px auto;
+  margin: 80px auto 0 auto;
   width: 600px;
   text-align: center;
 }
@@ -30,11 +30,9 @@ p {
 .reviews_box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
-
-  margin-left: 100px;
-  width: 400px;
+  width: 800px;
+  margin: 20px auto;
 }
 
 .review_create_box {
@@ -42,7 +40,6 @@ p {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
   margin-top: 20px;
 }
 
@@ -86,7 +83,7 @@ li {
   margin: 10px auto;
   text-decoration: underline;
   cursor: pointer;
-  width: 400px;
+  width: 250px;
 }
 
 nav.navbar {
@@ -109,6 +106,25 @@ input.form-control {
 
 button {
   margin: 0 10px;
+  width: 90px;
+  padding: 0;
+}
+
+.reviewlist_box {
+  display: flex;
+  flex-direction: row;
+}
+
+.author,
+.comment,
+.score {
+  list-style: none;
+  padding: 0px;
+}
+
+.delete_button {
+  width: 100px;
+  height: 10px;
 }
 
 img {
