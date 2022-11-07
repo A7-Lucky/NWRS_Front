@@ -1,74 +1,77 @@
 // 전역 변수 //
-const backend_base_url = 'http://127.0.0.1:8000'
-const frontend_base_url = 'http://127.0.0.1:5500/templates'
-
+const backend_base_url = "http://127.0.0.1:8000";
+const frontend_base_url = "http://127.0.0.1:5500/templates";
 
 // 로그인 //
 async function handleLogin() {
-    const loginData = {
-        "username": document.getElementById("username").value,
-        "password": document.getElementById("password").value,
+  const loginData = {
+    username: document.getElementById("username").value,
+    password: document.getElementById("password").value,
+  };
+  const response = await fetch(`${backend_base_url}/users/api/token/`, {
+    headers: {
+      Accept: "application/json",
+      "Content-type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify(loginData),
+  });
+
+  response_json = await response.json();
+
+  if (response.status == 200) {
+    localStorage.setItem("access", response_json.access);
+    localStorage.setItem("refresh", response_json.refresh);
+
+    const base64Url = response_json.access.split(".")[1];
+    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    const jsonPayload = decodeURIComponent(
+      atob(base64)
+        .split("")
+        .map(function (c) {
+          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+        })
+        .join("")
+    );
+
+    localStorage.setItem("payload", jsonPayload);
+    window.location.replace(`${frontend_base_url}/index.html`);
+  } else {
+    console.log(response.status);
+  }
+}
 
 // 회원가입
 async function handleSignup() {
-    const username = document.getElementById('username').value
-    const password = document.getElementById('password').value
-    const profile_img = document.getElementById('profile_img').files[0]
-    const introduce = document.getElementById('introduce').value
-    const favorite = document.getElementById('favorite').value
-    
-    const formData = new FormData()
-    formData.append("username", username)
-    formData.append("password", password)
-    
-    if (profile_img != undefined){
-        formData.append('profile_img', profile_img)
-    }
-    
-    formData.append("introduce", introduce)
-    formData.append("favorite", favorite)
-    
-    const response = await fetch(`${backend_base_url}/users/sign-up/`, {
-        headers: {
-        },
-        method: 'POST',
-        body: formData
-    })
-    console.log(response)
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const profile_img = document.getElementById("profile_img").files[0];
+  const introduce = document.getElementById("introduce").value;
+  const favorite = document.getElementById("favorite").value;
 
-    if (response.status == 201) {
-        alert('가입 완료!')
-        window.location.replace(`${frontend_base_url}/login.html`)
-    }
+  const formData = new FormData();
+  formData.append("username", username);
+  formData.append("password", password);
 
+  if (profile_img != undefined) {
+    formData.append("profile_img", profile_img);
+  }
 
-    const response = await fetch(`${backend_base_url}/users/api/token/`, {
-        headers: {
-            Accept: "application/json",
-            'Content-type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify(loginData)
-    })
+  formData.append("introduce", introduce);
+  formData.append("favorite", favorite);
 
-    response_json = await response.json()
+  const response = await fetch(`${backend_base_url}/users/sign-up/`, {
+    headers: {},
+    method: "POST",
+    body: formData,
+  });
+  console.log(response);
 
-    if (response.status == 200) {
-        localStorage.setItem("access", response_json.access);
-        localStorage.setItem("refresh", response_json.refresh);
-
-        const base64Url = response_json.access.split('.')[1];
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const jsonPayload = decodeURIComponent(atob(base64).split('').map(
-            function (c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-
-        localStorage.setItem("payload", jsonPayload);
-        window.location.replace(`${frontend_base_url}/index.html`)
-    } else {
-        console.log(response.status)
-    }
+  if (response.status == 201) {
+    alert("가입 완료!");
+    window.location.replace(`${frontend_base_url}/login.html`);
+  }
+}
 
 // 공통 --------------------------------------------------------------------------->
 // 로그아웃 //
@@ -189,7 +192,7 @@ async function CreateWebtoonReview(comment, my_score) {
         webtoon: webtoon_id,
         comment: comment,
         my_score: my_score,
-      })
+      }),
     }
   );
 
