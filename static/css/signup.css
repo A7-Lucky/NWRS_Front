@@ -1,18 +1,17 @@
-body{
-    height: 100vh;
-    display: grid;
-    align-items: center;
-    background-color: whitesmoke;
-}
-
-h1{
+h1 {
     font-size: 30px;
     font-weight: bold;
-    margin: 50px 0;
+    width: 250px;
+    margin: 50px auto;
 }
-
-form{
-    margin: 0 auto;
-    width: 300px;
-    text-align: center;
+form {
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    font-weight: bold;
+}
+button {
+    display: block;
+    width: 400px;
+    margin-top: 15px;
 }
