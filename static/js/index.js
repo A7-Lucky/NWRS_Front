@@ -1,6 +1,3 @@
-const backend_base_url = 'http://127.0.0.1:8000'
-const frontend_base_url = 'http://127.0.0.1:5500/templates'
-
 // 로그인한 사용자 액세스 정보 추적 //
 function parseJwt(token) {
     var base64Url = localStorage.getItem("access").split('.')[1];
@@ -12,16 +9,6 @@ function parseJwt(token) {
 
     return JSON.parse(jsonPayload);
 };
-
-// main 화면에 웹툰 리스트 가져오기 //
-async function getWebtoons() {
-    const response = await fetch(`${backend_base_url}/webtoon/`, {
-        method: "GET",
-    })
-
-    response_json = await response.json()
-    return response_json
-}
 
 // 웹툰 리스트 랜덤 출력 //
 async function loadWebtoons(){
@@ -43,25 +30,4 @@ async function loadWebtoons(){
         // thumbnail_url.appendChild(title)
     })
 }
-
 loadWebtoons()
-
-// 웹툰 디테일 페이지 연결 //
-function webtoonDetail(webtoon_id){
-    const url = `${frontend_base_url}/webtoon_detail.html?id=${webtoon_id}`
-    location.href = url
-}
-
-// 새로고침 //
-function pageRefresh(){
-    window.location.replace(`${frontend_base_url}/index.html`)
-}
-
-// 로그아웃 //
-function handleLogout(){
-    localStorage.removeItem("access")
-    localStorage.removeItem("refresh")
-    localStorage.removeItem("payload")
-
-    window.location.replace(`${frontend_base_url}/login.html`)
-}
