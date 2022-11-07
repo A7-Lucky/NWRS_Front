@@ -1,7 +1,13 @@
-
 // 전역 변수 //
 const backend_base_url = 'http://127.0.0.1:8000'
 const frontend_base_url = 'http://127.0.0.1:5500/templates'
+
+
+// 로그인 //
+async function handleLogin() {
+    const loginData = {
+        "username": document.getElementById("username").value,
+        "password": document.getElementById("password").value,
 
 // 회원가입
 async function handleSignup() {
@@ -34,7 +40,35 @@ async function handleSignup() {
         alert('가입 완료!')
         window.location.replace(`${frontend_base_url}/login.html`)
     }
-}
+
+
+    const response = await fetch(`${backend_base_url}/users/api/token/`, {
+        headers: {
+            Accept: "application/json",
+            'Content-type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(loginData)
+    })
+
+    response_json = await response.json()
+
+    if (response.status == 200) {
+        localStorage.setItem("access", response_json.access);
+        localStorage.setItem("refresh", response_json.refresh);
+
+        const base64Url = response_json.access.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(
+            function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+
+        localStorage.setItem("payload", jsonPayload);
+        window.location.replace(`${frontend_base_url}/index.html`)
+    } else {
+        console.log(response.status)
+    }
 
 // 공통 --------------------------------------------------------------------------->
 // 로그아웃 //
