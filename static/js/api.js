@@ -1,6 +1,16 @@
 const backend_base_url = 'http://127.0.0.1:8000'
 const frontend_base_url = 'http://127.0.0.1:5500/templates'
 
+// 공통 --------------------------------------------------------------------------->
+// 로그아웃 //
+function handleLogout(){
+    localStorage.removeItem("access")
+    localStorage.removeItem("refresh")
+    localStorage.removeItem("payload")
+
+    window.location.replace(`${frontend_base_url}/login.html`)
+}
+
 // index.html --------------------------------------------------------------------------->
 // 웹툰 리스트 //
 async function getWebtoons() {
@@ -16,20 +26,6 @@ async function getWebtoons() {
 function webtoonDetail(webtoon_id){
     const url = `${frontend_base_url}/webtoon_detail.html?id=${webtoon_id}`
     location.href = url
-}
-
-// 새로고침 //
-function pageRefresh(){
-    window.location.replace(`${frontend_base_url}/index.html`)
-}
-
-// 로그아웃 //
-function handleLogout(){
-    localStorage.removeItem("access")
-    localStorage.removeItem("refresh")
-    localStorage.removeItem("payload")
-
-    window.location.replace(`${frontend_base_url}/login.html`)
 }
 
 // login.html --------------------------------------------------------------------------->
@@ -119,6 +115,7 @@ async function getRecommend() {
     return response_json
 }
 
+
 // 웹툰 리뷰 리스트 가져오기 //
 async function getWebtoonReview(webtoon_id) {
     const response = await fetch(`${backend_base_url}/webtoon/${webtoon_id}/review`, {
@@ -203,18 +200,16 @@ function webtoonDetail(webtoon_id){
     location.href = url
 }
 
-// 홈으로 이동 //
-function moveHome(){
-    window.location.replace(`${frontend_base_url}/index.html`)
-}
+// webtoon_search.html --------------------------------------------------------------------------->
+// 검색한 웹툰 //
+async function getWebtoonsSearch() {
+    const response = await fetch(`${backend_base_url}/webtoon/search?` + new URLSearchParams(window.location.search), {
+        method: "GET",
+    })
+    console.log(response)
 
-// 로그아웃 //
-function handleLogout(){
-    localStorage.removeItem("access")
-    localStorage.removeItem("refresh")
-    localStorage.removeItem("payload")
-
-    window.location.replace(`${frontend_base_url}/login.html`)
+    response_json = await response.json()
+    return response_json
 }
 
 // myreview.html --------------------------------------------------------------------------->
@@ -294,4 +289,10 @@ async function getName(user_id) {
     else{
         return null
     }
+
+// 웹툰 검색 페이지 연결 //
+function webtoonSearch(){
+    const word = document.getElementById("inputSearch").value
+    const url = `${frontend_base_url}/webtoon_search.html?search=${word}`
+    location.href = url
 }

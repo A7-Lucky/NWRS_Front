@@ -16,13 +16,13 @@ h2{
 }
 
 form{
-    margin: 35px auto;
+    margin: 60px auto;
     width: 1200px;
     text-align: center;
 }
 
 hr{
-    margin: 10px;
+    margin: 20px;
     border: 0;
     height: 2px;
     background-color: black;
@@ -40,14 +40,14 @@ img{
     width: 200px;
 }
 
-/* p.div{
+span{
     font-size: large;
     margin: 0;
     cursor: pointer;
-    width: 360px;
+    width: 300px;
     text-decoration: underline;
     display: inline-block;
-} */
+}
 
 nav.navbar{
     width: 100%;
@@ -69,7 +69,6 @@ input.form-control{
 
 .material-symbols-outlined {
     font-size: 30px;
-    margin: 10px
 }
 
 button{

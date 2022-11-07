@@ -10,7 +10,7 @@ function parseJwt(token) {
     return JSON.parse(jsonPayload);
 };
 
-// 웹툰 목록 클릭 시 디테일 페이지 출력 //
+// 디테일 페이지 보여주기 //
 const urlParams = new URLSearchParams(window.location.search);
 const webtoon_id = urlParams.get('id');
 
