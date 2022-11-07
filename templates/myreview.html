@@ -119,9 +119,6 @@
       <div id="delete_button" class="delete_button"></div>
     </div>
 
-    <script src="../static/js/api.js"></script>
-    <script src="../static/js/myreview.js"></script>
-
     <script>
       // 인증된 유저만 페이지 접근 가능 //
       var token = localStorage.getItem("access");
@@ -129,5 +126,8 @@
         window.location.replace(`http://127.0.0.1:5500/templates/login.html`);
       }
     </script>
+
+    <script src="../static/js/api.js"></script>
+    <script src="../static/js/myreview.js"></script>
   </body>
 </html>
