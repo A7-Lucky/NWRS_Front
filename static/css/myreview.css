@@ -1,0 +1,70 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: whitesmoke;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 100px auto;
+}
+
+ol {
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+li {
+  margin: 10px auto;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 300px;
+}
+
+button {
+  width: 100px;
+  margin: 2px 4px;
+}
+
+textarea {
+  width: 500px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.reviewlist_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+
+.comment,
+.score {
+  list-style: none;
+  padding: 0px;
+}
+
+nav.navbar {
+  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+}
+
+a.navbar-brand {
+  margin: 0 20px;
+}
+
+div.space {
+  display: flex;
+}
+
+input.form-control {
+  width: 500px;
+}

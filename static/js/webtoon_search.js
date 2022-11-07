@@ -15,9 +15,9 @@ function parseJwt(token) {
   return JSON.parse(jsonPayload);
 }
 
-// 웹툰 리스트 랜덤 출력 //
-async function loadWebtoons() {
-  webtoons = await getWebtoons();
+// 검색 페이지 보여주기 //
+async function loadWebtoonSearch() {
+  webtoons = await getWebtoonsSearch();
 
   const thumbnail_url = document.getElementById("thumbnail_url");
   webtoons.forEach((webtoon) => {
@@ -28,11 +28,11 @@ async function loadWebtoons() {
     imgTag.setAttribute("onclick", "webtoonDetail(this.id)");
     thumbnail_url.appendChild(imgTag);
     // 사진 + 글 버전 //
-    // const title = document.createElement('div')
-    // title.innerText = webtoon.title
-    // title.setAttribute("id", webtoon.id)
-    // title.setAttribute("onclick", "webtoonDetail(this.id)")
-    // thumbnail_url.appendChild(title)
+    const title = document.createElement("span");
+    title.innerText = webtoon.title;
+    title.setAttribute("id", webtoon.id);
+    title.setAttribute("onclick", "webtoonDetail(this.id)");
+    thumbnail_url.appendChild(title);
   });
 }
-loadWebtoons();
+loadWebtoonSearch();

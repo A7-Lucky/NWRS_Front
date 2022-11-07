@@ -1,66 +1,132 @@
-body{
-    height: 100vh;
-    display: grid;
-    align-items: center;
-    background-color: whitesmoke;
+body {
+  height: 100vh;
+  display: grid;
+  background-color: whitesmoke;
 }
 
-h1{
-    font-size: 25px;
-    font-weight: bold;
-    margin: 25px 0;
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 25px 0;
 }
 
-form{
-    margin: 0 auto;
-    width: 600px;
-    text-align: center;
+form {
+  margin: 80px auto 0 auto;
+  width: 600px;
+  text-align: center;
 }
 
-p{
-    margin: 20px 0;
+p {
+  margin: 20px 0;
 }
 
-p.webtoon_url{
-    font-weight: bold;
-    color: cornflowerblue;
-    cursor: pointer;
-    width: 150px;
-    margin: 20px auto;
+.wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
 }
 
-p.top_score{
-    margin: 20px 0 0 0;
-    font-weight: bold;
-    font-size: 17px;
-    color: red;
+.reviews_box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 800px;
+  margin: 20px auto;
 }
 
-p.non_score{
-    margin: 0;
-    color: slategrey;
+.review_create_box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
-hr{
-    margin: 0;
+.review_create_small_box {
+  margin: 3px;
 }
 
-ol{
-    margin: 0 0 20px 0;
-    padding: 0;
+p.webtoon_url {
+  font-weight: bold;
+  color: cornflowerblue;
+  cursor: pointer;
+  width: 150px;
+  margin: 20px auto;
 }
 
-li{
-    margin: 10px auto;
-    text-decoration: underline;
-    cursor: pointer;
-    width: 300px;
+p.top_score {
+  margin: 20px 0 0 0;
+  font-weight: bold;
+  font-size: 17px;
+  color: red;
 }
 
-button{
-    margin: 25px 10px;
+p.non_score {
+  margin: 0;
+  color: slategrey;
 }
 
-img{
-    width: 400px;
+hr {
+  margin: 0;
+  border: 0;
+  height: 1px;
+  background-color: black;
+}
+
+ol {
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+
+li {
+  margin: 10px auto;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 250px;
+}
+
+nav.navbar {
+  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+}
+
+a.navbar-brand {
+  margin: 0 20px;
+}
+
+div.space {
+  display: flex;
+}
+
+input.form-control {
+  width: 500px;
+}
+
+button {
+  margin: 0 10px;
+  width: 90px;
+  padding: 0;
+}
+
+.reviewlist_box {
+  display: flex;
+  flex-direction: row;
+}
+
+.author,
+.comment,
+.score {
+  list-style: none;
+  padding: 0px;
+}
+
+.delete_button {
+  width: 100px;
+  height: 10px;
+}
+
+img {
+  width: 350px;
 }
