@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NWRS | 프로필 수정 페이지</title>
+    <link rel="stylesheet" href="../static/css/profile_update.css" />
+</head>
+<body>
+    <h1>NWRS 프로필 수정</h1>
+    <form>
+        <!-- 아이디, 비밀번호 수정은 상황보고 추가 예정 -->
+        <!-- <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">아이디</label>
+            <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">비밀번호</label>
+            <input type="password" class="form-control" id="password">
+        </div> -->
+        <div>
+            <label class="profile" for="inputGroupFile01">현재 프로필</label>
+            <img src="https://static10.tgstat.ru/channels/_0/9d/9df7f95ee5d063c7417eeb079c9d2849.jpg" alt="..." class="img-thumbnail">
+        </div>
+        <div>
+            <div class = "h4">
+                <div class="file mb-3">
+                    <label class="img" for="inputGroupFile01">프로필 사진</label>
+                    <input type="file" class="form-control" id="profile_img">
+                </div>
+            </div>
+            <div class = "h5">    
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">프로필 소개</label>
+                    <input type="text" class="form-control" id="introduce" aria-describedby="emailHelp">
+                </div>
+            </div>
+            <div class = "h6">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">관심있는 장르</label>
+                    <input type="text" class="form-control" id="favorite" aria-describedby="emailHelp">
+                </div>
+            </div>
+        <div>
+            <button type="button" class="btn btn-primary" id='signupbtn' onclick="handleUpdate()">수정하기</button>
+            <button type="button" class="btn btn-primary" onclick="location.href='mypage.html'">취소</button>
+        </div>
+    </form>
+    
+    <script src="../static/js/api.js"></script>
+</body>
+</html>
