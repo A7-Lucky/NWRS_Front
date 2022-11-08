@@ -37,7 +37,7 @@ async function handleLogin() {
     localStorage.setItem("payload", jsonPayload);
     window.location.replace(`${frontend_base_url}/index.html`);
   } else {
-    console.log(response.status);
+    alert("로그인 정보를 확인하세요.", response.status);
   }
 }
 
@@ -113,6 +113,9 @@ async function handleSignup() {
   if (response.status == 201) {
     alert("가입 완료!");
     window.location.replace(`${frontend_base_url}/login.html`);
+  } else {
+    // 공백에 대한 alert 추가 필요 //
+    alert("이미 사용 중인 아이디입니다.");
   }
 }
 
