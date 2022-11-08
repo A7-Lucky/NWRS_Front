@@ -2,6 +2,8 @@
 const backend_base_url = "http://127.0.0.1:8000";
 const frontend_base_url = "http://127.0.0.1:5500/templates";
 
+var token = localStorage.getItem("access")
+
 // 로그인 //
 async function handleLogin() {
   const loginData = {

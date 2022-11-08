@@ -122,7 +122,6 @@
 
     <script>
       // 인증된 유저만 페이지 접근 가능 //
-      var token = localStorage.getItem("access");
       if (!token) {
         window.location.replace(`${frontend_base_url}/login.html`);
       }
