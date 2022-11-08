@@ -112,5 +112,11 @@
 
     <script src="../static/js/api.js"></script>
     <script src="../static/js/signup.js"></script>
+    <script>
+      // 인증된 유저는 인덱스 페이지로 //
+      if (token) {
+        window.location.replace(`http://127.0.0.1:5500/templates/index.html`);
+      }
+    </script>
   </body>
 </html>

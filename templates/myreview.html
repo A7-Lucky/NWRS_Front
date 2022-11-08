@@ -124,7 +124,6 @@
 
     <script>
       // 인증된 유저만 페이지 접근 가능 //
-      var token = localStorage.getItem("access");
       if (!token) {
         window.location.replace(`http://127.0.0.1:5500/templates/login.html`);
       }
