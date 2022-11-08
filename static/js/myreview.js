@@ -30,7 +30,7 @@ async function loadMyreviews() {
     newWebtoon.setAttribute("id", myreview.id);
     newComment.setAttribute("id", myreview.id);
     newScore.setAttribute("id", myreview.id);
-    newWebtoon.innerText = "작성자 : " + myreview.webtoon;
+    newWebtoon.innerText = "제목 : " + myreview.webtoon;
     newComment.innerText = "댓글 : " + myreview.comment;
     newScore.innerText = "평점 : " + myreview.my_score;
     webtoon_list.appendChild(newWebtoon);
