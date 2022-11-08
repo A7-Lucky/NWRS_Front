@@ -104,7 +104,11 @@ bb<!DOCTYPE html>
         <button type="button" class="btn btn-primary" onclick="#">
           프로필
         </button>
-        <button type="button" class="btn btn-primary" onclick="location.href='myreview.html'">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="location.href='myreview.html'"
+        >
           My 리뷰
         </button>
         <button type="button" class="btn btn-primary" onclick="handleLogout()">
@@ -122,6 +126,9 @@ bb<!DOCTYPE html>
       <hr />
     </form>
 
+    <script src="../static/js/api.js"></script>
+    <script src="../static/js/index.js"></script>
+
     <script>
       // 인증된 유저만 페이지 접근 가능 //
       var token = localStorage.getItem("access");
@@ -129,8 +136,5 @@ bb<!DOCTYPE html>
         window.location.replace(`${frontend_base_url}/login.html`);
       }
     </script>
-
-    <script src="../static/js/api.js"></script>
-    <script src="../static/js/index.js"></script>
   </body>
 </html>
