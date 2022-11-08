@@ -40,11 +40,6 @@ p {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-}
-
-.review_create_small_box {
-  margin: 3px;
 }
 
 p.webtoon_url {
@@ -53,6 +48,10 @@ p.webtoon_url {
   cursor: pointer;
   width: 150px;
   margin: 20px auto;
+}
+
+.review_create_inner_box {
+  margin: 0 0 10px 0;
 }
 
 p.top_score {
