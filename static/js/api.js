@@ -165,7 +165,7 @@ async function getWebtoonsDetail(webtoon_id) {
 // 추천 웹툰 리스트 //
 async function getRecommend() {
   const response = await fetch(
-    `${backend_base_url}/webtoon/${webtoon_id}/practice`,
+    `${backend_base_url}/webtoon/${webtoon_id}/recommend`,
     {
       method: "GET",
     }
